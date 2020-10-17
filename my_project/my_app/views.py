@@ -3,9 +3,12 @@ from django.http import request, JsonResponse
 from .models import Employee
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 # Create your views here.
 
 @csrf_exempt
+@api_view(['GET'])
 def EmployeeDetails(request):
     if request.method == 'GET':
         obj = Employee.objects.all()
@@ -20,7 +23,8 @@ def EmployeeDetails(request):
         return JsonResponse(data)
 
     
-class ListEmployee(View):
+class ListEmployee(APIView):
+
     def get(self, request):
         obj = Employee.objects.all()
         data = {"response":list(obj.values("id", "name"))}
