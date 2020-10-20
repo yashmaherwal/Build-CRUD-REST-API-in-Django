@@ -58,7 +58,8 @@ class UpdateEmployee(APIView):
 
     def put(self, request, id):
         data = request.data
-        obj = Employee.objects.get(id=id)
+        obj = self.get_object(id)
+#         obj = Employee.objects.get(id=id)
         serializer_obj = EmployeeSerializer(obj,data=data)
         if serializer_obj.is_valid():
             serializer_obj.save()
@@ -66,7 +67,8 @@ class UpdateEmployee(APIView):
         return Response(serializaer_obj.errors)
         
     def delete(self, request, id):
-        obj = Employee.objects.get(id=id)
+        obj = self.get_object(id)
+#         obj = Employee.objects.get(id=id)
         obj.delete()
         return Response({"response": "Employee is successfully deleted."})
 
