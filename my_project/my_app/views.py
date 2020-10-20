@@ -49,6 +49,13 @@ class ListEmployee(APIView):
 
 class UpdateEmployee(APIView):
 
+    def get_object(self, id):
+        try:
+            obj = Employee.objects.get(id=id)
+            return obj
+        except Employee.DoesNotExist:
+            raise Http404
+
     def put(self, request, id):
         data = request.data
         obj = Employee.objects.get(id=id)
