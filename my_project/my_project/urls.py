@@ -20,5 +20,6 @@ from my_app.views import EmployeeDetails, ListEmployee
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('employeedetails/', EmployeeDetails),
-    path('listemployee/', ListEmployee.as_view())
+    path('listemployee/', ListEmployee.as_view()),
+    path('updateemployee/<id>', UpdateEmployee.as_view())
 ]
