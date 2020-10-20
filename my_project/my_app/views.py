@@ -57,5 +57,13 @@ class UpdateEmployee(APIView):
             serializer_obj.save()
             return Response(serializer_obj.data)
         return Response(serializaer_obj.errors)
+        
+    def delete(self, request, id):
+        obj = Employee.objects.get(id=id)
+        obj.delete()
+        return Response({"response": "Employee is successfully deleted."})
+
+
+
 
 
