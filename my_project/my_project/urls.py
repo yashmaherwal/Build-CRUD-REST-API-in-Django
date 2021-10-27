@@ -15,12 +15,13 @@ Including another URLconf
 URL Updated
 hahaha
 """
-from django.contrib import admin
+# from django.contrib import admin
 from django.urls import path
 from my_app.views import EmployeeDetails, ListEmployee
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+#     path('admin/', admin.site.urls),
+    ## Removed the admin site access in order stio data leaks
     path('employeedetails/', EmployeeDetails),
     path('listemployee/', ListEmployee.as_view()),
     path('updateemployee/<id>', UpdateEmployee.as_view())
