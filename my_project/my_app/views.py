@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from . serializer import EmployeeSerializer
 # Create your views here.
-
+# Exactly here
 @csrf_exempt
 @api_view(['GET'])
 def EmployeeDetails(request):
