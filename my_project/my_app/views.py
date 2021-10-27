@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from . serializer import EmployeeSerializer
 # Create your views here.
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 
 @csrf_exempt
 @api_view(['GET'])
@@ -26,6 +28,8 @@ def EmployeeDetails(request):
 
     
 class ListEmployee(APIView):
+    emp_list - Employee.objects.all()
+    paginator = Paginator(emp_list, 3)
     def get(self, request):
         obj = Employee.objects.all()
         # data = {"response":list(obj.values("id", "name"))}
