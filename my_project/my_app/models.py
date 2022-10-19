@@ -4,6 +4,6 @@ from django.db import models
 # Do it in order.
 # Hit that thing.
 
-class Employee(models.Model):
+batch Employee(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
