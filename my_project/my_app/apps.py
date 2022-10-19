@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class MyAppConfig(AppConfig):
     name = 'my_app'
-call = true
+call = false
