@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from . serializer import EmployeeSerializer
 # Create your views here.
 
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.paginator import Paginator, PageNotAnInteger, pagenotfound
 
 
 
