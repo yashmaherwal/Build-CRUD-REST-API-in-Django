@@ -23,4 +23,4 @@ def main():
 if __name__ == '__main__':
     main()
     print 1
-return 0
+return 2
